@@ -18,7 +18,7 @@ class ImageTest < ActiveSupport::TestCase
 
   test 'Create with invalid image url fails' do
     assert_raises ActiveRecord::RecordInvalid do
-        Image.create!(url: 'myInvalidImageUrl.jpg')
+      Image.create!(url: 'myInvalidImageUrl.jpg')
     end
   end
 
