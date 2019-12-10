@@ -1,1 +1,12 @@
-<h1> Hello World </h1>
+<h1>Image List</h1>
+<br>
+<form action=/images/new>
+  <input type="submit" value="Add Image" />
+</form>
+<br>
+
+<% @images.reverse.each do |image| %>
+    <p>
+      <img src="<%= image.url %>" />
+    </p>
+<% end %>
