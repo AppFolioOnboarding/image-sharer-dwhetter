@@ -1,15 +1,20 @@
 <h1>Image List</h1>
 <br>
 <form action=/images/new>
-  <input type="submit" value="Add Image" />
+  <input type="submit" value="Add Image" id="id"/>
 </form>
 <br>
+<a href="/">Clear filter</a>
+<br><br>
 
-<% @images.reverse.each do |image| %>
+<% if @images.any? %>
+  <% @images.reverse.each do |image| %>
     <p>
       <img src="<%= image.url %>" />
       <br>
       <%= image_tags(image) %>
-    </p>
+      </p>
+  <% end %>
+<% else %>
+  <h2>No images found.</h2>
 <% end %>
-
