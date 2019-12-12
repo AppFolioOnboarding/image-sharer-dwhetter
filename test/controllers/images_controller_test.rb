@@ -32,4 +32,12 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select 'body', /Back/
   end
+
+  test 'should create and then delete image' do
+    assert_no_difference('Image.count') do
+      @image.url = 'https://my_image_url'
+      post images_url, params: { image: { url: @image.url } }
+      delete "/images/#{@image.id}"
+    end
+  end
 end
