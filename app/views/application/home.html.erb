@@ -8,5 +8,8 @@
 <% @images.reverse.each do |image| %>
     <p>
       <img src="<%= image.url %>" />
+      <br>
+      <%= image_tags(image) %>
     </p>
 <% end %>
+
