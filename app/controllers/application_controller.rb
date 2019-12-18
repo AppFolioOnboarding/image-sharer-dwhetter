@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def home
-    @images = Image.all
+    tag = request.query_parameters['tag_list']
+    @images = tag.nil? ? Image.all : Image.tagged_with(tag)
   end
 end
