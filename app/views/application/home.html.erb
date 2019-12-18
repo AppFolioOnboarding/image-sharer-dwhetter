@@ -6,14 +6,19 @@
 <br>
 <a href="/">Clear filter</a>
 <br><br>
+<p id="notice"><%= notice %></p>
 
 <% if @images.any? %>
   <% @images.reverse.each do |image| %>
     <p>
-      <img src="<%= image.url %>" />
-      <br>
-      <%= image_tags(image) %>
-      </p>
+      <div class="image">
+        <img src="<%= image.url %>" />
+        <%= link_to 'Delete', image_path(id: image.id), class: 'delete_link_to', method: :delete, data: { confirm: 'You are about to delete image ' + image.url + '. continue?'} %>
+      </div>
+      <div class="image_tags">
+        <%= image_tags(image) %>
+      </div>
+    </p>
   <% end %>
 <% else %>
   <h2>No images found.</h2>

@@ -40,7 +40,8 @@ class ImagesController < ApplicationController
   # DELETE /images/1
   def destroy
     @image.destroy
-    redirect_to images_url, notice: 'Image was successfully destroyed.'
+    flash[:notice] = 'Image was successfully removed.'
+    redirect_to root_path
   end
 
   private

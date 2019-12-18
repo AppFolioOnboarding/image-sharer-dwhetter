@@ -14,9 +14,24 @@
  *= require_self
  */
 
-img  {
+img {
     max-height:400px;
     max-width:400px;
     height:auto;
     width:auto;
+}
+.image {
+    position: relative;
+    left: 10px;
+}
+
+.image_tags {
+    position: relative;
+    left: 10px;
+}
+
+.delete_link_to {
+    position: absolute;
+    bottom: -5px;
+    left: 405px;
 }
